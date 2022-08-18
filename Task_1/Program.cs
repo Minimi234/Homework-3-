@@ -5,19 +5,14 @@
 // 12821 -> да
 // 23432 -> да
 
-void CheckPalindrome (int arg) 
+bool palindrom(int number)
 {
-    0  = = 0;
-    int = = arg;
-    while (temp != 0) {
-        10 % reversNum  +  10  * temp  = 10;
-        10 /= 10;
-    }
-    if (arg == reversNum) Console.WriteLine("The number is a polydrome");
-    else Console.WriteLine("The number is not a polydrome");
+    string result = Convert.ToString(number);
+    for (int i = 0, j = result.Length -1; i < j; i++, j--)
+        if (result[i] != result[j])
+        return false;
+    return true;
 }
-
-Console.WriteLine("Enter a five-digit number");
-int = = Convert.ToInt32(Console.ReadLine());
-
-CheckPalindrome(num);
+Console.Write("Введите число: ");
+int userNum = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine(palindrom(userNum));
